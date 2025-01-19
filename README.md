@@ -12,3 +12,5 @@ Notification:
 2. Same way, more SCP-956 exists, the more lag will occur.
 3. If you want to use custom model for SCP-956, please make it facing z+ way when rotate it 90˚ y, and compile with rotated 90 degrees.
 4. If height is not correct, change it manually in config.
+
+Original Code: https://github.com/MujisongPlay/Scp956plugin/
