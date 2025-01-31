@@ -16,7 +16,7 @@ namespace SCP956Plugin
 
         //basic setting
         [Description("The name of schematic to use as model of SCP-956.")]
-        public string[] SchematicName { get; set; } = new string[] { "scp956" };
+        public string[] SchematicName { get; set; } = new string[] { "SCP956" };
         [Description("If you change the model, you should set value distance schematic center to bottom point.")]
         public float SchematicOffsetHeight { get; set; } = 0.5f;
 
