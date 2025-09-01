@@ -1,4 +1,4 @@
-﻿using MapEditorReborn.Events.EventArgs;
+﻿using ProjectMER.Events.Arguments;
 using SCP956Plugin.SCP956;
 using System;
 using System.Collections.Generic;

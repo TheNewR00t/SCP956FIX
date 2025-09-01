@@ -1,13 +1,9 @@
 ﻿using Exiled.API.Features;
-using MapEditorReborn.Events.Handlers;
-using MEC;
 using SCP956Plugin.Handlers;
-using SCP956Plugin.SCP956;
-using System;
 using UnityEngine;
-using Exiled.Events.Handlers;
 using SchematicHan = SCP956Plugin.Handlers.SchematicHandler;
 using PlayerHan = SCP956Plugin.Handlers.PlayerHandler;
+using ProjectMER.Events.Handlers;
 
 namespace SCP956Plugin
 {
@@ -86,7 +82,7 @@ namespace SCP956Plugin
         {
             for (int i = 0; i < Config.MaximumCountOfScp956; i++)
             {
-                MapEditorReborn.API.Features.ObjectSpawner.SpawnSchematic(SCP956Plugin.Instance.Config.SchematicName.RandomItem(), new Vector3(0f, -300f, 0f), Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f), Vector3.one, null);
+                ProjectMER.Features.ObjectSpawner.SpawnSchematic(SCP956Plugin.Instance.Config.SchematicName.RandomItem(), new Vector3(0f, -300f, 0f), Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f), Vector3.one);
             }
         }
 

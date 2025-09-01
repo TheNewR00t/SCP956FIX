@@ -24,6 +24,7 @@ using System.Runtime.InteropServices;
 using Exiled.Events.EventArgs.Player;
 using System;
 using InventorySystem.Items.Firearms.Modules;
+using Exiled.API.Enums;
 
 namespace SCP956Plugin.SCP956
 {
@@ -108,7 +109,7 @@ namespace SCP956Plugin.SCP956
                         }
                         else if (config.TargetingAmbient != -1 && Player.TryGet(hub, out Player target))
                         {
-                            Exiled.API.Extensions.MirrorExtensions.SendFakeTargetRpc(target, ReferenceHub.HostHub.networkIdentity, typeof(AmbientSoundPlayer), "RpcPlaySound", new object[]
+                            Exiled.API.Extensions.MirrorExtensions.SendFakeTargetRpc(target, ReferenceHub.GetHub(Server.Host.ReferenceHub).networkIdentity, typeof(AmbientSoundPlayer), "RpcPlaySound", new object[]
                             {
                             config.TargetingAmbient
                             });
@@ -386,7 +387,7 @@ namespace SCP956Plugin.SCP956
                     CandyKindID candyKindID = (num-- > 0) ? CandyKindID.Pink : TryGet();
                     scp330Pickup.StoredCandies.Add(candyKindID);
                     scp330Pickup.NetworkExposedCandy = candyKindID;
-                    rigidbody.velocity = _velocity;
+                    rigidbody.linearVelocity = _velocity;
                     rigidbody.position = vector3;
                 }
             }
@@ -452,7 +453,7 @@ namespace SCP956Plugin.SCP956
         {
             pos = Vector3.zero;
             doo = null;
-            Dictionary<FacilityZone, int> ZoneIntensity = new Dictionary<FacilityZone, int> { };
+            Dictionary<ZoneType, int> ZoneIntensity = new Dictionary<ZoneType, int> { };
             foreach (ReferenceHub hub in ReferenceHub.AllHubs)
             {
                 if (hub.isLocalPlayer)
@@ -463,15 +464,17 @@ namespace SCP956Plugin.SCP956
                 {
                     continue;
                 }
-                RoomIdentifier identifier = RoomIdUtils.RoomAtPositionRaycasts((hub.roleManager.CurrentRole as FpcStandardRoleBase).FpcModule.Position);
-                if (!(identifier == null) && config.SpawnableZone.Contains(identifier.Zone))
+
+                Player player = Player.Get(hub);
+                Room room = Room.Get(player.CurrentRoom.Type);
+                if (room != null && config.SpawnableZone.Contains(room.Zone))
                 {
                     int num;
-                    ZoneIntensity.TryGetValue(identifier.Zone, out num);
-                    ZoneIntensity[identifier.Zone] = num + 1;
+                    ZoneIntensity.TryGetValue(room.Zone, out num);
+                    ZoneIntensity[room.Zone] = num + 1;
                 }
             }
-            FacilityZone zone = FacilityZone.None;
+            ZoneType zone = ZoneType.Other;
             if (ZoneIntensity.Count == 0)
             {
                 zone = config.SpawnableZone.RandomItem();
@@ -479,7 +482,7 @@ namespace SCP956Plugin.SCP956
             else
             {
                 int num2 = 0;
-                foreach (KeyValuePair<FacilityZone, int> keyValuePair in ZoneIntensity)
+                foreach (KeyValuePair<ZoneType, int> keyValuePair in ZoneIntensity)
                 {
                     if (keyValuePair.Value >= num2)
                     {
@@ -491,7 +494,7 @@ namespace SCP956Plugin.SCP956
             List<DoorVariant> list = new List<DoorVariant> { };
             foreach (DoorVariant door in DoorVariant.AllDoors)
             {
-                if (door is BreakableDoor && door.Rooms != null && door.Rooms.Length != 0 && door.Rooms[0].Zone == zone)
+                if (door is BreakableDoor && door.Rooms != null && door.Rooms.Length != 0 && door.Rooms[0].Zone == (FacilityZone)zone)
                 {
                     if (config.DoNotOverlapSpawnPosition && DoorList.Contains(door))
                     {
@@ -521,7 +524,9 @@ namespace SCP956Plugin.SCP956
                 pos = new Vector3(vector.x, transform.position.y + config.SchematicOffsetHeight, vector.z);
                 if (config.LogsItslocation)
                 {
-                    ServerConsole.AddLog(Name + " Spawned in: " + MapGeneration.RoomIdUtils.RoomAtPosition(pos).name);
+
+                    Room room1 = Room.Get(pos);
+                    ServerConsole.AddLog(Name + " Spawned in: " + room1.name);
                 }
                 return true;
             }

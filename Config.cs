@@ -21,11 +21,11 @@ namespace SCP956Plugin
         public float SchematicOffsetHeight { get; set; } = 0.5f;
 
         //Spawn
-        public FacilityZone[] SpawnableZone { get; set; } = new FacilityZone[]
+        public ZoneType[] SpawnableZone { get; set; } = new ZoneType[]
         {
-            FacilityZone.LightContainment,
-            FacilityZone.HeavyContainment,
-            FacilityZone.Entrance
+            ZoneType.LightContainment,
+            ZoneType.HeavyContainment,
+            ZoneType.Entrance
         };
         [Description("When round starts and after the corresponding time, SCP-956 will automatically spawn.")]
         public float SpawnTimer { get; set; } = 15f;

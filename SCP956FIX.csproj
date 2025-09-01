@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ExMod.Exiled">
-      <Version>9.4.0</Version>
+      <Version>9.8.1</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.3.3</Version>
@@ -48,44 +48,29 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\Downloads\Dev\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="MapEditorReborn">
-      <HintPath>..\..\..\Downloads\Dev\MapEditorReborn.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
-      <HintPath>..\..\..\Downloads\Dev\Mirror.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.dll</HintPath>
     </Reference>
     <Reference Include="Mirror.Components">
-      <HintPath>..\..\..\Downloads\Dev\Mirror.Components.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>..\..\..\Downloads\Dev\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>..\..\..\Downloads\Dev\Mono.Cecil.Mdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>..\..\..\Downloads\Dev\Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>..\..\..\Downloads\Dev\Mono.Cecil.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Posix">
-      <HintPath>..\..\..\Downloads\Dev\Mono.Posix.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Security">
-      <HintPath>..\..\..\Downloads\Dev\Mono.Security.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.Components.dll</HintPath>
     </Reference>
     <Reference Include="Pooling">
-      <HintPath>..\..\..\Downloads\Dev\Pooling.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Pooling.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectMER">
+      <HintPath>..\..\..\Downloads\ProjectMER.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\Downloads\Dev\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\Downloads\Dev\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>D:\SteamLibrary\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

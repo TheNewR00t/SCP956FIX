@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Exiled.Events.EventArgs.Player;
+﻿using Exiled.Events.EventArgs.Player;
 using SCP956Plugin.SCP956;
 
 namespace SCP956Plugin.Handlers
