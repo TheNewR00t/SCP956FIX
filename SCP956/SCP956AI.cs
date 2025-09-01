@@ -30,6 +30,9 @@ namespace SCP956Plugin.SCP956
 {
     public class SCP956AI : MonoBehaviour
     {
+
+        public static SCP956AI Instance { get; set; }
+
         void Start()
         {
             this.lerpRot = UnityEngine.Random.Range(0f, 360f);
@@ -45,6 +48,8 @@ namespace SCP956Plugin.SCP956
             {
                 Health = config.Scp956Hp;
             }
+
+            Instance = this;
         }
 
         void Update()
@@ -591,6 +596,7 @@ namespace SCP956Plugin.SCP956
             }
         }
 
+        
         public static List<DoorVariant> DoorList = new List<DoorVariant> { };
 
         public List<ReferenceHub> Targeted = new List<ReferenceHub> { };
@@ -606,6 +612,7 @@ namespace SCP956Plugin.SCP956
         private float _sequenceTimer;
 
         public Vector3 _spawnPos;
+
 
         private float _initialRot;
 
