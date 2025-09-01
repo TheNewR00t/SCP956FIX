@@ -3,8 +3,8 @@ Scp956plugin for SCP-956 model with MER plugin for EXILED framework in SCP: SL
 
 How to use this.
 1. This plugin works with MER plugin. Link: https://discord.com/channels/947849283514814486/995694845903524002
-2. Download scp956.Model.Foler.rar, .dll file in release and locate it to Appdata\Roaming\Exiled\Config\MapEditorReborn\Schematics.
-3. Locate the .dll file to Appdata\Roaming\Exiled\Plugins.
+2. Download scp956.Model.Foler.rar, .dll file in release and locate it to Appdata\Roaming\SCP Secret Laboratory\LabAPI\Configs\ProjectMER\Schematics.
+3. Locate the .dll file to Appdata\Roaming\EXILED\Plugins.
 4. Have fun.
 
 Notification:
@@ -14,3 +14,4 @@ Notification:
 4. If height is not correct, change it manually in config.
 
 Original Code: https://github.com/MujisongPlay/Scp956plugin/
+
